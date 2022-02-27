@@ -1,0 +1,26 @@
+
+.square {
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+  border: solid 2px green;
+  /* display: flex; */
+}
+
+.square.active {
+  background-color: red;
+}
+
+/* .square-grid {
+  display: flex;
+  height: 200px;
+} */
+
+#grid-container {
+  /* display: flex; */
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: repeat(8, auto);
+  height: 150px;
+  width: 400px;
+}
