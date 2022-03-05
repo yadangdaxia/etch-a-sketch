@@ -9,27 +9,15 @@ body {
   font-family: 'Press Start 2P', cursive; */
 }
 
-.square {
-  background-color: #FFFFFF;
-  width: 40px;
-  height: 40px;
-  border: solid 2px #E5DDC8;
-  /* display: flex; */
-}
-
-.square.black {
-  background-color: #000000;
-}
-
 
 #title-bar {
   width: 100%;
   background-color: #004369;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   margin-bottom: 30px;
   color: #FFFFFF;
-
 }
+
 #title-bar h1{
   display: flex;
   justify-content: center;
@@ -49,7 +37,6 @@ body {
   margin: 30px;
   /* font-family: 'Montserrat', sans-serif; */
   font-weight: bold;
-  /* color: #FFFFFF; */
 }
 
 #settings-card {
@@ -60,13 +47,54 @@ body {
   border-radius: 12px;
 }
 
+
+.form-check {
+ margin: 10px;
+}
+
+.form-check-input {
+}
+
+.btn {
+  margin: 10px;
+}
+
+
+
 #grid-container {
-  /* display: flex; */
-  /* flex-wrap: wrap; */
+  /* display: flex;
+  flex-wrap: wrap; */
   display: grid;
-  grid-template-rows: repeat(15, auto);
-  grid-template-columns: repeat(15, auto);
-  height: 500px;
-  width: 400px;
+  grid-template-columns: repeat(30, auto);
+  grid-template-rows: repeat(20, auto);
+
+  /* display: inline-block;
+  flex-wrap: wrap; */
+  /* height: 500px;
+  width: 400px; */
   margin: 30px;
+}
+
+
+
+
+#grid-container .square {
+  background-color: #FFFFFF;
+  width: 30px;
+  height: 30px;
+  border: solid 2px #E5DDC8;
+  /* display: flex; */
+  padding: 12px;
+}
+
+#grid-container .square.black {
+  background-color: #333333;
+}
+
+#grid-container .square.red {
+  background-color: #DB1F48;
+}
+
+#grid-container .square.blue {
+  background-color: #4A84B9;
 }
