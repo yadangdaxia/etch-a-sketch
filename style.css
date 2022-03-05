@@ -91,8 +91,8 @@ body {
   background-color: #333333;
 }
 
-#grid-container .square.red {
-  background-color: #DB1F48;
+#grid-container .square.white {
+  background-color: #FFFFFF;
 }
 
 #grid-container .square.blue {

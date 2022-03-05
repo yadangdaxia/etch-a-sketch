@@ -16,35 +16,40 @@ function makeSquare(x, y) {
     radioButton.forEach((button) => {
       button.addEventListener('click', () => {
         if (document.getElementById('choose-color').checked) {
-          console.log("choose color")
+          // console.log("choose color")
+          let colorWell = document.querySelector("#colorWell");
+          // console.log(colorWell)
+          colorWell.addEventListener("change", (e) => {
+            let selectedColor = e.target.value;
+            // console.log(selectedColor)
+            square.addEventListener('mouseover', (e) => {
+              e.currentTarget.style = `background-color: ${selectedColor}`
+            })
+          })
         }
-        else if (document.getElementById('red-pen').checked) {
-          // console.log("red")
+        else if (document.getElementById('white-pen').checked) {
           // redPen();
           square.addEventListener('mouseover', (e) => {
-            e.currentTarget.classList.remove('blue')
+            e.currentTarget.style.removeProperty('background-color');
             e.currentTarget.classList.remove('black')
-            e.currentTarget.classList.add('red')
+            e.currentTarget.classList.add('white')
           })
         }
         else if (document.getElementById('black-pen').checked) {
-          // console.log("black")
           // blackPen();
           square.addEventListener('mouseover', (e) => {
-            e.currentTarget.classList.remove('blue')
-            e.currentTarget.classList.remove('red')
+            e.currentTarget.style.removeProperty('background-color');
+            e.currentTarget.classList.remove('white')
             e.currentTarget.classList.add('black')
           })
         }
-        else if (document.getElementById('blue-pen').checked) {
-          // console.log("blue")
-          // bluePen();
-          square.addEventListener('mouseover', (e) => {
-            e.currentTarget.classList.remove('red')
-            e.currentTarget.classList.remove('black')
-            e.currentTarget.classList.add('blue')
-          })
-        }
+        // else if (document.getElementById('rainbow-pen').checked) {
+        //   // rainbowPen();
+        //   square.addEventListener('mouseover', (e) => {
+        //     e.currentTarget.style.removeProperty('background-color');
+        //     e.currentTarget.classList.add('rainbow')
+        //   })
+        // }
         else {
           console.log('nada')
         }
@@ -52,6 +57,11 @@ function makeSquare(x, y) {
     })
   };
 };
+
+
+
+
+
 
 // function blackPen() {
 //   const divs = document.querySelectorAll('.square')
@@ -71,16 +81,6 @@ function makeSquare(x, y) {
 //   divs.forEach((div) => {
 //     div.addEventListener('mouseover', (e) => {
 //       e.currentTarget.classList.add('red')
-//     })
-//   })
-// };
-
-// function bluePen() {
-//   const divs = document.querySelectorAll('.square')
-//   // console.log(divs);
-//   divs.forEach((div) => {
-//     div.addEventListener('mouseover', (e) => {
-//       e.currentTarget.classList.add('blue')
 //     })
 //   })
 // };
