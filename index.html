@@ -27,36 +27,41 @@
 
   <div id="settings-container">
     <div id="settings-card">
-      <p>Grid size</p>
-      <div>Slider</div>
+      <h3>Grid sizes</h3>
       <button class="btn btn-light">Create new grid</button>
 
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="color-option" id="choose-color">
-          <p>Choose color</p>
-          <input type="color" value="#DB1F48" id="colorWell">
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="color-option" id="white-pen">
-          <p>White (Eraser)</p>
-      </div>
+      <h3>Pens</h3>
+
       <div class="form-check">
         <input class="form-check-input" type="radio" name="color-option" id="black-pen">
           <p>Black</p>
       </div>
+
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="color-option" id="blue-pen">
-          <p>Blue</p>
+        <input class="form-check-input" type="radio" name="color-option" id="white-pen">
+          <p>White (Eraser)</p>
       </div>
 
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="color-option" id="rainbow-pen">
+          <p>Rainbow</p>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="color-option" id="choose-color">
+        <p>Choose color</p>
+        <input type="color" value="#DB1F48" id="colorWell">
+      </div>
+
+      <div>
+        <button class="btn btn-light" id="clear-all">Clear all</button>
+      </div>
 
       <div>
         <button class="btn btn-light" id="export-button">Export</button>
       </div>
 
-      <div>
-        <button class="btn btn-light" id="clear-button">Clear all</button>
-      </div>
+
 
     </div>
   </div>

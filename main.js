@@ -1,4 +1,6 @@
 
+
+
 makeSquare(30, 20);
 // (columns, rows)
 
@@ -11,6 +13,14 @@ function makeSquare(x, y) {
     square.classList.add('square')
     // square.textContent = 'click to change color'
     gridContainer.appendChild(square);
+
+
+    let clearButton = document.getElementById('clear-all')
+    clearButton.addEventListener('click', (e) => {
+      // console.log(e)
+      square.style = `background-color: '#FFFFFF'`
+      square.classList.add('white')
+    })
 
     const radioButton = document.querySelectorAll('.form-check-input')
     radioButton.forEach((button) => {
@@ -43,21 +53,41 @@ function makeSquare(x, y) {
             e.currentTarget.classList.add('black')
           })
         }
-        // else if (document.getElementById('rainbow-pen').checked) {
-        //   // rainbowPen();
-        //   square.addEventListener('mouseover', (e) => {
-        //     e.currentTarget.style.removeProperty('background-color');
-        //     e.currentTarget.classList.add('rainbow')
-        //   })
-        // }
+        else if (document.getElementById('rainbow-pen').checked) {
+          // rainbowPen();
+          square.addEventListener('mouseover', (e) => {
+
+            e.currentTarget.classList.remove('white')
+            e.currentTarget.classList.remove('black')
+            e.currentTarget.style.removeProperty('background-color');
+            const rainbowColor = generateRainbow();
+            console.log(rainbowColor)
+            // e.currentTarget.style = `background-color: rgb(200, 5, 99);opacity:0.6`
+            e.currentTarget.style = `background-color: rgba(${rainbowColor}, 0.8)`;
+
+          })
+        }
         else {
           console.log('nada')
         }
       })
     })
   };
+
+
 };
 
+
+
+function generateRainbow() {
+  let red = Math.floor(Math.random() * 255)
+  let green = Math.floor(Math.random() * 255)
+  let blue = Math.floor(Math.random() * 255)
+  // let opacity = Math.floor(Math.random() * 100)/100
+  // let opacity = 1
+  // Took forever to figure out it needs to be an array.
+  return [red,green,blue]
+}
 
 
 
