@@ -1,12 +1,7 @@
 
 body {
-  background-color: #E5DDC8;
-  /* font-family: 'Architects Daughter', cursive;
-  font-family: 'Bungee', cursive;
-  font-family: 'Indie Flower', cursive;
-  font-family: 'Montserrat', sans-serif;
-  font-family: 'Orbitron', sans-serif;
-  font-family: 'Press Start 2P', cursive; */
+  background-color: #F0F2F3;
+
 }
 
 h3 {
@@ -35,16 +30,20 @@ p {
   padding: 15px;
   font-size: 50px;
   font-family: 'Bungee', cursive;
+  /* hor. vert. blur color */
+  /* text-shadow: 0 0 4px #FFFFFF; */
 }
 
 #main-container {
   display: flex;
+  min-width: 100%;
   margin: auto;
 }
 
 #settings-container {
   flex-wrap: wrap;
-  margin: 30px;
+  margin: 20px;
+  align-content: top;
   /* font-family: 'Montserrat', sans-serif; */
   font-weight: bold;
 }
@@ -52,22 +51,80 @@ p {
 #settings-card {
   width: 300px;
   /* height: 500px; */
-  background-color: #01949A;
-  padding: 30px;
+  background-color: #71B1C5;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 15px;
   border-radius: 12px;
+  /* hor. vert. blur spread color */
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.4);
+}
+
+.slider {
+  display: inline-block;
+  width: 200px;
+  height: 20px;
+  padding: 0;
 }
 
 
-.form-check {
- margin: 10px;
+
+
+h3 {
+  padding-top: 20px;
 }
 
-.form-check-input {
-}
+
+
+
+
+/* input[type='radio'] {
+  -webkit-appearance: none;
+  color: red;
+  background-color: green;
+} */
+
+/* input[type='range'] {
+  -webkit-appearance: none;
+  color: red;
+  background-color: green;
+} */
+
+/* input[type='range']::-webkit-slider-runnable-track {
+  height: 10px;
+  border: 1px solid var(--primary-dark);
+  border-radius: 25px;
+  background: var(--secondary-light);
+} */
+
+/* input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 25px;
+} */
+
 
 .btn {
   margin: 10px;
+  /* background-color: #E5DDC8; */
+  background-color: #004369;
+  border: black;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #FFFFFF;
 }
+
+.btn:hover {
+  color: red;
+  background-color: #F0F2F3;
+}
+
+
+
+
+
+
 
 
 
@@ -75,13 +132,15 @@ p {
   /* display: flex;
   flex-wrap: wrap; */
   display: grid;
-  grid-template-columns: repeat(30, auto);
-  grid-template-rows: repeat(20, auto);
+  /* position: relative; */
+  /* Move these to js: */
+  /* grid-template-columns: repeat(30, auto);
+  grid-template-rows: repeat(20, auto);  */
 
-  /* display: inline-block;
-  flex-wrap: wrap; */
-  /* height: 500px;
-  width: 400px; */
+  /* display: inline-block;*/
+  /* flex-wrap: wrap; */
+  min-height: 500px;
+  min-width: 500px;
   margin: 30px;
 }
 
@@ -90,11 +149,15 @@ p {
 
 #grid-container .square {
   background-color: #FFFFFF;
-  width: 30px;
-  height: 30px;
-  border: solid 2px #E5DDC8;
-  /* display: flex; */
-  padding: 12px;
+  /* max-width: 100%;
+  max-height: 100%; */
+  border: solid 1px #F0F2F3;
+  /* max-width: 2;
+  max-height: 2; */
+  /* box-shadow: 2px 1px 2px 1px; */
+  flex-wrap: wrap;
+  /* padding: 12px; */
+  /* margin: 0.5px; */
 }
 
 #grid-container .square.black {

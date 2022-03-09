@@ -1,12 +1,41 @@
 
+const slider = document.getElementById('slider')
+console.log(slider.value);
 
 
-makeSquare(30, 20);
-// (columns, rows)
+const sizeLabel = document.getElementById('size-label')
+// console.log(sizeLabel);
+
+
+slider.onchange = (e) => {
+  // console.log(e.target.value, "on change")
+  let gridSize = e.target.value;
+  console.log(gridSize);
+  sizeLabel.textContent = `${gridSize} x ${gridSize}`;
+
+  const createGridButton = document.getElementById('create-grid')
+  // console.log(createGridButton);
+  createGridButton.addEventListener('click', (e) => {
+    // console.log(e.currentTarget)
+
+    const gridContainer = document.querySelector('#grid-container');
+    console.log(gridContainer, "here is the grid container!")
+
+    let node = document.querySelector('div.square');
+    console.log(node, "node")
+
+    gridContainer.innerHTML = '';
+    makeSquare(gridSize, gridSize);
+  });
+}
+
 
 function makeSquare(x, y) {
   const gridContainer = document.querySelector('#grid-container');
-  console.log(gridContainer);
+  // gridContainer.remove();
+  console.log(gridContainer.style, "Can view all properties in console");
+  gridContainer.style.gridTemplateColumns = `repeat(${slider.value}, 1fr)`;
+  gridContainer.style.gridTemplateRows = `repeat(${slider.value}, 1fr)`;
   // gridContainer.classList.add('grid-container')
   for (let i = 0; i < x * y; i++) {
     let square = document.createElement('div');
@@ -17,7 +46,7 @@ function makeSquare(x, y) {
 
     let clearButton = document.getElementById('clear-all')
     clearButton.addEventListener('click', (e) => {
-      // console.log(e)
+      console.log(e)
       square.style = `background-color: '#FFFFFF'`
       square.classList.add('white')
     })
@@ -74,9 +103,7 @@ function makeSquare(x, y) {
     })
   };
 
-
 };
-
 
 
 function generateRainbow() {
@@ -85,32 +112,6 @@ function generateRainbow() {
   let blue = Math.floor(Math.random() * 255)
   // let opacity = Math.floor(Math.random() * 100)/100
   // let opacity = 1
-  // Took forever to figure out it needs to be an array.
+  // Took forever to figure out it needs to return an array.
   return [red,green,blue]
 }
-
-
-
-
-
-// function blackPen() {
-//   const divs = document.querySelectorAll('.square')
-//   // console.log(divs);
-//   divs.forEach ((div) => {
-
-//     div.addEventListener('mouseover', (e) => {
-//       e.currentTarget.classList.add('black')
-//     })
-
-//   })
-// };
-
-// function redPen() {
-//   const divs = document.querySelectorAll('.square')
-//   // console.log(divs);
-//   divs.forEach((div) => {
-//     div.addEventListener('mouseover', (e) => {
-//       e.currentTarget.classList.add('red')
-//     })
-//   })
-// };
